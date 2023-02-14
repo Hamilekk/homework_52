@@ -1,0 +1,47 @@
+[
+{
+  "model": "webapp.todolist",
+  "pk": 3,
+  "fields": {
+    "description": "Помыть посуду",
+    "status": "new",
+    "due_date": "2023-02-14"
+  }
+},
+{
+  "model": "webapp.todolist",
+  "pk": 10,
+  "fields": {
+    "description": "dasdas",
+    "status": "new",
+    "due_date": "2023-02-01"
+  }
+},
+{
+  "model": "webapp.todolist",
+  "pk": 11,
+  "fields": {
+    "description": "фвы",
+    "status": "new",
+    "due_date": "2023-02-02"
+  }
+},
+{
+  "model": "webapp.todolist",
+  "pk": 12,
+  "fields": {
+    "description": "Поспать",
+    "status": "new",
+    "due_date": "2023-03-16"
+  }
+},
+{
+  "model": "webapp.todolist",
+  "pk": 13,
+  "fields": {
+    "description": "dsa",
+    "status": "new",
+    "due_date": "2023-02-10"
+  }
+}
+]

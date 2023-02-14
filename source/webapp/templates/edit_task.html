@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Edit Task</title>
+</head>
+<body>
+<h1>Edit Task</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required>{{ task.description }}</textarea><br>
+    <label for="status">Status:</label><br>
+    <select id="status" name="status" required>
+        {% for value, label in STATUS_CHOICES %}
+            <option value="{{ value }}" {% if value == task.status %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+    </select><br>
+    <label for="due_date">Due Date:</label><br>
+    <input id="due_date" type="date" name="due_date" value="{{ task.due_date|date:'Y-m-d' }}"><br>
+    <br>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

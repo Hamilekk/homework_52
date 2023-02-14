@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>ADD</title>
+</head>
+<body>
+<h1>Добавление новой задачи</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="description">Описание:</label>
+        <textarea name="description" id="description" required></textarea>
+    </div>
+    <div>
+        <label for="status">Статус:</label>
+        <select name="status" id="status">
+            {% for status in STATUS_CHOICES %}
+                <option value="{{ status.0 }}">{{ status.1 }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="due_date">Дата выполнения:</label>
+        <input type="date" name="due_date" id="due_date">
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+
+</body>
+</html>

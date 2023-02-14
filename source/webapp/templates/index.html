@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>index page</title>
+</head>
+<body>
+<div class="container">
+    <h1>ToDo List</h1>
+    <h2><a href="task/add/">Add Task</a></h2>
+    {% for task in tasks %}
+        <h2>{{ task.pk }}. Название: {{ task.description }} <br> Статус: {{ task.status }}</h2>
+        <p class="view">
+            <a href="/task/?pk={{ task.pk }}">View....</a>
+            <a href="/task/edit/{{ task.pk }}">Edit Task</a>
+        </p>
+
+    {% endfor %}
+
+
+</div>
+</body>
+</html>
